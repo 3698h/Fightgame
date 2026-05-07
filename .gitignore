@@ -1,0 +1,25 @@
+### IntelliJ IDEA ###
+.idea/
+*.iml
+
+### Compiled class files ###
+*.class
+
+### Package files ###
+*.jar
+*.war
+
+### Log files ###
+*.log
+
+### Eclipse ###
+.classpath
+.factorypath
+.project
+.settings/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
