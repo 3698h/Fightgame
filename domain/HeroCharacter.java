@@ -4,15 +4,20 @@ import java.util.ArrayList;
 
 public class HeroCharacter extends Character{
     public ArrayList<String> skillList;
+    public ArrayList<Consumable> packageList;
 
     public HeroCharacter() {
         super();
         skillList = new ArrayList<>();
+        packageList = new ArrayList<>();
     }
-    public HeroCharacter(String name, int HP, int attack, int defense) {
-        super(name, HP, attack, defense);
+    public HeroCharacter(String name, int HP, int mp,int attack, int defense) {
+        super(name, HP,mp,attack, defense);
         skillList = new ArrayList<>();
+        packageList = new ArrayList<>();
     }
+
+
 
     // 展示技能列表，逗号分隔
     public String showSkill(){

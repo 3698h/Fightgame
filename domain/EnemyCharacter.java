@@ -9,15 +9,28 @@ public class EnemyCharacter extends Character {
         super();
     }
 
-    // 新增：5个参数的构造方法
+    // 5个参数的构造方法（默认0蓝量）
     public EnemyCharacter(String name, int HP, int attack, int defense, String skill) {
-        super(name, HP, attack, defense);
+        super(name, HP, 0, attack, defense);
         this.skill = skill;
-        this.defending = false;  // 默认不防御
+        this.defending = false;
+    }
+
+    // 新增：6个参数的构造方法（包含mp）
+    public EnemyCharacter(String name, int HP, int mp, int attack, int defense, String skill) {
+        super(name, HP, mp, attack, defense);
+        this.skill = skill;
+        this.defending = false;
     }
 
     public EnemyCharacter(String name, int HP, int attack, int defense, String skill, boolean defending) {
-        super(name, HP, attack, defense);
+        super(name, HP, 0, attack, defense);
+        this.skill = skill;
+        this.defending = defending;
+    }
+
+    public EnemyCharacter(String name, int HP, int mp, int attack, int defense, String skill, boolean defending) {
+        super(name, HP, mp, attack, defense);
         this.skill = skill;
         this.defending = defending;
     }

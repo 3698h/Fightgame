@@ -6,27 +6,47 @@ public class Character {
     public int maxHP;
     public int attack;
     public int defense;
+    public int mp;
+    public int maxMp;
 
     public Character() {
 
     }
-    public Character(String name, int HP, int attack, int defense) {
+
+
+
+    public Character(String name, int HP, int mp, int attack, int defense) {
         this.name = name;
         this.HP = HP;
         this.maxHP = HP;
+        this.mp = mp;
+        this.maxMp = mp;
         this.attack = attack;
         this.defense = defense;
     }
+
+
+
+
     // 判断角色是否存活
     public boolean isAlive() {
         return HP > 0;
     }
 
     // 恢复血量，不超过最大生命值
-    public void heal(int amount){
+    public void healHp(int amount){
         HP+=amount;
         if (HP> maxHP){
             HP = maxHP;
+        }
+
+    }
+    // 恢复蓝量，不超过最大蓝量
+    public void healMp(int amount){
+        amount = (int)(amount * 1.3);
+        mp += amount;
+        if (mp > maxMp){
+            mp = maxMp;
         }
     }
 
@@ -40,7 +60,7 @@ public class Character {
 
     // 展示角色属性
     public String show(){
-        return name+"[当前生命："+HP+", 攻击："+attack+", 防御："+defense+"]";
+        return name+"[当前生命："+HP+", 当前蓝量："+mp+", 攻击："+attack+", 防御："+defense+"]";
 
     }
 }
